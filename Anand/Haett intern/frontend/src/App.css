@@ -1,0 +1,262 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: #0f172a;
+  color: #0f172a;
+}
+
+.app {
+  min-height: 100vh;
+  padding: 30px;
+  background:
+    radial-gradient(circle at top left, #ff4d4d55, transparent 35%),
+    radial-gradient(circle at bottom right, #2563eb55, transparent 35%),
+    #0f172a;
+}
+
+nav {
+  max-width: 1100px;
+  margin: 0 auto 30px;
+  padding: 18px 24px;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.12);
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  backdrop-filter: blur(14px);
+  border: 1px solid rgba(255,255,255,0.18);
+}
+
+nav h2 {
+  margin: 0;
+  font-size: 24px;
+}
+
+.card {
+  max-width: 1050px;
+  margin: auto;
+  background: rgba(255,255,255,0.96);
+  border-radius: 28px;
+  padding: 36px;
+  box-shadow: 0 30px 80px rgba(0,0,0,0.35);
+  animation: fadeUp 0.4s ease;
+}
+
+.hero {
+  text-align: center;
+  padding: 60px 40px;
+}
+
+.hero h1,
+.card h1 {
+  margin-top: 0;
+  font-size: 42px;
+  color: #111827;
+}
+
+.hero p {
+  max-width: 650px;
+  margin: 0 auto 24px;
+  font-size: 18px;
+  color: #4b5563;
+  line-height: 1.6;
+}
+
+.loginBox {
+  max-width: 420px;
+  margin: 30px auto 10px;
+  padding: 24px;
+  border-radius: 22px;
+  background: #f8fafc;
+  border: 1px solid #e5e7eb;
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  padding: 15px 16px;
+  margin: 10px 0;
+  border-radius: 14px;
+  border: 1px solid #d1d5db;
+  font-size: 15px;
+  background: white;
+  outline: none;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: #ff4d4d;
+  box-shadow: 0 0 0 4px rgba(255, 77, 77, 0.15);
+}
+
+textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+button {
+  padding: 13px 22px;
+  margin: 8px 6px 8px 0;
+  border: none;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #ff4d4d, #f97316);
+  color: white;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 14px;
+  transition: 0.2s;
+}
+
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(249, 115, 22, 0.35);
+}
+
+button:disabled {
+  background: #9ca3af;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.summary {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  margin: 28px 0;
+}
+
+.summary div {
+  background: linear-gradient(135deg, #f8fafc, #eef2ff);
+  border: 1px solid #e5e7eb;
+  padding: 24px;
+  border-radius: 22px;
+  text-align: center;
+}
+
+.summary h2 {
+  margin: 0;
+  font-size: 34px;
+  color: #ff4d4d;
+}
+
+.summary p {
+  margin-bottom: 0;
+  color: #6b7280;
+}
+
+.codeCard,
+.adminCard {
+  background: #f9fafb;
+  padding: 22px;
+  border-radius: 22px;
+  margin-top: 18px;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 8px 20px rgba(15, 23, 42, 0.06);
+}
+
+.codeCard b {
+  display: inline-block;
+  font-size: 22px;
+  color: #111827;
+  letter-spacing: 1px;
+  margin-right: 12px;
+}
+
+.adminCard h3 {
+  margin-top: 0;
+  color: #111827;
+}
+
+.adminCard p {
+  margin: 8px 0;
+  color: #4b5563;
+}
+
+.tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 24px 0;
+}
+
+.tabs button {
+  background: #111827;
+}
+
+.status {
+  text-align: center;
+  max-width: 700px;
+}
+
+.status h1 {
+  color: #111827;
+}
+
+.rejected {
+  border-left: 10px solid #ef4444;
+}
+
+.toast {
+  position: fixed;
+  right: 24px;
+  top: 24px;
+  background: #16a34a;
+  color: white;
+  padding: 15px 22px;
+  border-radius: 16px;
+  font-weight: 700;
+  z-index: 1000;
+  box-shadow: 0 18px 40px rgba(0,0,0,0.25);
+}
+
+.small {
+  margin-top: 16px;
+  font-size: 13px;
+  color: #64748b;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 700px) {
+  .app {
+    padding: 16px;
+  }
+
+  nav {
+    flex-direction: column;
+    gap: 14px;
+    text-align: center;
+  }
+
+  .card {
+    padding: 24px;
+    border-radius: 22px;
+  }
+
+  .hero h1,
+  .card h1 {
+    font-size: 30px;
+  }
+
+  .summary {
+    grid-template-columns: 1fr;
+  }
+}
